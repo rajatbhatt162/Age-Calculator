@@ -1,29 +1,52 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }
+
 .container {
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(135deg, #a4a1fd, #240dfc);
+  background: linear-gradient(135deg, #7646ca, #240dfc);
   color: #fff;
   padding: 10px;
+  animation: neonBackground 5s ease-in-out infinite; /* Neon effect animation for background */
 }
+
+/* Neon effect animation for background */
+@keyframes neonBackground {
+  0% {
+    background: linear-gradient(135deg, #7646ca, #4d3aff);
+  }
+  50% {
+    background: linear-gradient(135deg, #03d1f5, #7646ca); /* Color changes to yellow and red */
+  }
+  100% {
+    background: linear-gradient(135deg, #7646ca, #4e3aff); /* Back to the original gradient */
+  }
+}
+
 .calculator {
   width: 100%;
   max-width: 600px;
-  margin-left: 10%;
-  margin-top: 10%;
+  margin: 10% auto;
+  padding: 20px;
+  box-sizing: border-box;
 }
+
 .calculator h1 {
-  font-size: 60px;
-  color: #ffffff;
+  font-size: 32px;
+  text-align: center;
+  color: #df7272;
+  text-shadow: 0 0 5px #fff, 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #f5f503, 0 0 50px #f5f503, 0 0 75px #f5f503;
+  animation: neonText 1.5s ease-in-out infinite alternate;
 }
+
 .calculator h1 span {
-  color: #f5f503;
+  color: #000000;
 }
+
 .input-box {
   margin: 40px 0;
   padding: 35px;
@@ -31,31 +54,58 @@
   background: rgba(141, 169, 212, 0.3);
   display: flex;
   align-items: center;
+  flex-direction: column;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease-in-out;
 }
+
+/* Hover effect for input box */
+.input-box:hover {
+  transform: scale(1.05);
+}
+
 .input-box input {
   flex: 1;
-  margin-right: 20px;
+  margin-bottom: 20px;
   padding: 14px 20px;
   border: 0;
   outline: 0;
   font-size: 18px;
   border-radius: 5px;
   position: relative;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 5px #f5f503;
+  transition: box-shadow 0.3s ease-in-out;
 }
+
+/* Hover effect for input field */
+.input-box input:hover {
+  box-shadow: 0 0 10px #f5f503;
+}
+
 .input-box button {
-  background: #f5f503;
+  background: #000000;
   border: 0;
   outline: 0;
   padding: 15px 30px;
   border-radius: 5px;
   font-weight: 500;
-  color: #333;
+  color: #ffffff;
   cursor: pointer;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 15px #ffffff;
+  transition: background 0.3s, box-shadow 0.3s;
 }
+
+/* Button hover effect */
 .input-box button:hover {
-    background: #fffd93; /* Lighter hover effect */
-    color: #000;
-  }
+  background: #fffd93; /* Lighter hover effect */
+  color: #000;
+  box-shadow: 0 0 10px #f5f503;
+}
+
 .input-box input::-webkit-calendar-picker-indicator {
   top: 0;
   left: 0;
@@ -67,4 +117,52 @@
   background-position: calc(100% - 10px);
   background-size: 30px;
   cursor: pointer;
+}
+
+/* Footer Styles */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #240dfc, #7646ca); /* gradient from light to dark */
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  animation: fadeIn 3s ease-in-out; /* Animation for fade-in effect */
+}
+
+.footer p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Animation for fade-in */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive styling for mobile devices */
+@media screen and (max-width: 768px) {
+  .calculator h1 {
+    font-size: 28px;
+  }
+
+  .input-box {
+    padding: 20px;
+  }
+
+  .input-box input {
+    padding: 12px 18px;
+    font-size: 16px;
+  }
+
+  .input-box button {
+    padding: 12px 25px;
+    font-size: 16px;
+  }
 }
