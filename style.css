@@ -130,6 +130,13 @@
   bottom: 0;
   animation: fadeIn 3s ease-in-out; /* Animation for fade-in effect */
 }
+label {
+  display: block; /* Ensures label appears above the input */
+  margin-bottom: 8px; /* Adds space below the label */
+  font-size: 16px; /* Adjusts font size */
+  font-weight: bold; /* Makes text bold */
+  color: #333; /* Dark gray text color */
+}
 
 .footer p {
   margin: 0;
